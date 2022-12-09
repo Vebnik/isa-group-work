@@ -4,7 +4,12 @@ version = "0.1.0"
 description = ""
 authors = ["Vebnik(Nik) <vebnik111@gmail.com>"]
 readme = "README.md"
-packages = [{include = "project_12_09"}]
+packages = [{include = "src"}]
+
+
+[tool.poetry.scripts]
+start = "main:main"
+
 
 [tool.poetry.dependencies]
 python = "^3.11"

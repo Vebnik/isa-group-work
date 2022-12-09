@@ -1,5 +1,4 @@
 .vscode
 .idea
-data
 .pytest_cache
 __pycache__
