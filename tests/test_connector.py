@@ -13,7 +13,6 @@ def test_connector_insert():
   assert data_from_file == [data_for_file]
   
 
-
 def test_connector_delete():
   df.delete({'id': 1})
 

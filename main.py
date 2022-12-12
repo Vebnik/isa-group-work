@@ -20,7 +20,16 @@ def main():
   list_product = [Product(item) for item in data]
 
   # category
+  cat_data = {
+    'id': 1,
+    'title': 'Some Title',
+    'description': 'Some description',
+    'products': list_product,
+  }
+
+  category = Category(cat_data)
   
+  print(category.products_list)
 
 if __name__ == '__main__':
   main()
