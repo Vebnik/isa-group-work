@@ -22,13 +22,18 @@ class Connector:
         создание его при необходимости
         """
         try:
-            if self.__data_file not in os.listdir('.'):
+            if not os.path.exists(self.__data_file):
                 with open(self.__data_file, 'w') as file:
                     file.write(json.dumps([]))
         except Exception as ex:
             logging.critical(ex)
 
-
+    def get_data(self) -> list[dict]:
+        try:
+            with open(self.__data_file, 'r', encoding='utf-8') as f:
+                return json.loads(f.read())
+        except Exception as ex:
+            logging.critical(ex)
 
     def insert(self, data_insert):
         try:
@@ -51,7 +56,7 @@ class Connector:
         и вернуть все строки, в которых цена 1000
         """
         try:
-            with open(self.__data_file, 'r') as file:
+            with open(self.__data_file, 'r', encoding='utf-8') as file:
                 data = json.loads(file.read())
                 result = None
 
